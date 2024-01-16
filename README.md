@@ -1,3 +1,7 @@
+## It's for me to read it and learn 
+### is not my project I copy is from
+https://www.baeldung.com/java-dijkstra#java-implementation
+
 Here’s a table that summarizes the iterations that were performed during evaluation steps:
 
 Iteration	Unsettled	Settled	EvaluationNode	A	B	C	D	E	F
