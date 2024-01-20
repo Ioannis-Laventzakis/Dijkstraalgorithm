@@ -32,7 +32,7 @@ public class Main {
         }
     }
 
-    private static Graph calculateShortestPathFromSource(Graph graph, Node source) {
+    private static Graph calculateShortestPathFromSource(Graph graph, Node source) { // calculateShortestPathFromSource() method
         source.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -59,7 +59,7 @@ public class Main {
         return graph;
     }
 
-    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
+    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) { // getLowestDistanceNode() method
         Node lowestDistanceNode = null;
         int lowestDistance = Integer.MAX_VALUE;
 
@@ -74,7 +74,7 @@ public class Main {
         return lowestDistanceNode;
     }
 
-    private static void calculateMinimumDistance(Node evaluationNode, int edgeWeight, Node sourceNode) {
+    private static void calculateMinimumDistance(Node evaluationNode, int edgeWeight, Node sourceNode) { // calculateMinimumDistance() method
         int sourceDistance = sourceNode.getDistance();
 
         if (sourceDistance + edgeWeight < evaluationNode.getDistance()) {

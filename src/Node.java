@@ -7,13 +7,13 @@ public class Node {
 
     private String name;
 
-    private List<Node> shortestPath = new LinkedList<>();
+    private List<Node> shortestPath = new LinkedList<>(); // LinkedList is a List that allows you to add elements to the beginning or end of the list
 
-    private Integer distance = Integer.MAX_VALUE;
+    private Integer distance = Integer.MAX_VALUE; // Integer.MAX_VALUE is the largest possible value for an Integer in Java
 
-    Map<Node, Integer> adjacentNodes = new HashMap<>();
+    Map<Node, Integer> adjacentNodes = new HashMap<>(); // HashMap is a Map that allows you to store key-value pairs
 
-    public void addDestination(Node destination, int distance) {
+    public void addDestination(Node destination, int distance) { // addDestination() method
         adjacentNodes.put(destination, distance);
     }
 
