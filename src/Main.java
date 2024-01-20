@@ -7,32 +7,28 @@ import java.util.Map.Entry;
 
 public class Main {
     public static void main(String[] args) {
-        // Creating nodes
         Node nodeA = new Node("A");
         Node nodeB = new Node("B");
         Node nodeC = new Node("C");
-        // Add destinations and distances
+
         nodeA.addDestination(nodeB, 10);
         nodeA.addDestination(nodeC, 15);
         nodeB.addDestination(nodeC, 5);
 
-        // Creating a graph and adding nodes
         Graph graph = new Graph();
         graph.addNode(nodeA);
         graph.addNode(nodeB);
         graph.addNode(nodeC);
 
-        // Calculate the shortest path from source (e.g., nodeA)
         graph = calculateShortestPathFromSource(graph, nodeA);
 
-        // Print the shortest paths and distances for each node...
         for (Node node : graph.getNodes()) {
             System.out.println("Shortest Path to " + node.getName() + ": " + node.getShortestPath());
             System.out.println("Shortest Distance to " + node.getName() + ": " + node.getDistance());
         }
     }
 
-    private static Graph calculateShortestPathFromSource(Graph graph, Node source) { // calculateShortestPathFromSource() method
+    private static Graph calculateShortestPathFromSource(Graph graph, Node source) {
         source.setDistance(0);
 
         Set<Node> settledNodes = new HashSet<>();
@@ -59,7 +55,7 @@ public class Main {
         return graph;
     }
 
-    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) { // getLowestDistanceNode() method
+    private static Node getLowestDistanceNode(Set<Node> unsettledNodes) {
         Node lowestDistanceNode = null;
         int lowestDistance = Integer.MAX_VALUE;
 
@@ -74,13 +70,12 @@ public class Main {
         return lowestDistanceNode;
     }
 
-    private static void calculateMinimumDistance(Node evaluationNode, int edgeWeight, Node sourceNode) { // calculateMinimumDistance() method
+    private static void calculateMinimumDistance(Node evaluationNode, int edgeWeight, Node sourceNode) {
         int sourceDistance = sourceNode.getDistance();
 
         if (sourceDistance + edgeWeight < evaluationNode.getDistance()) {
             evaluationNode.setDistance(sourceDistance + edgeWeight);
 
-            // Update the shortest path
             List<Node> shortestPath = new LinkedList<>(sourceNode.getShortestPath());
             shortestPath.add(sourceNode);
             evaluationNode.setShortestPath(shortestPath);

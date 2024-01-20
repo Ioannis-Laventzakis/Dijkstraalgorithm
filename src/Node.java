@@ -6,22 +6,21 @@ import java.util.Map;
 public class Node {
 
     private String name;
-
-    private List<Node> shortestPath = new LinkedList<>(); // LinkedList is a List that allows you to add elements to the beginning or end of the list
-
-    private Integer distance = Integer.MAX_VALUE; // Integer.MAX_VALUE is the largest possible value for an Integer in Java
-
-    Map<Node, Integer> adjacentNodes = new HashMap<>(); // HashMap is a Map that allows you to store key-value pairs
-
-    public void addDestination(Node destination, int distance) { // addDestination() method
-        adjacentNodes.put(destination, distance);
-    }
+    private List<Node> shortestPath = new LinkedList<>();
+    private Integer distance = Integer.MAX_VALUE;
+    Map<Node, Integer> adjacentNodes = new HashMap<>();
 
     public Node(String name) {
         this.name = name;
     }
 
-    // getters and setters
+    public void addDestination(Node destination, int distance) {
+        adjacentNodes.put(destination, distance);
+    }
+
+    public Map<Node, Integer> getAdjacentNodes() {
+        return adjacentNodes;
+    }
 
     public String getName() {
         return name;
@@ -45,14 +44,5 @@ public class Node {
 
     public void setDistance(Integer distance) {
         this.distance = distance;
-    }
-
-    public Map<Node, Integer> getAdjacentNodes() {
-        return adjacentNodes;
-    }
-
-    public void setAdjacentNodes(Map<Node, Integer> adjacentNodes) {
-        this.adjacentNodes = adjacentNodes;
-
     }
 }

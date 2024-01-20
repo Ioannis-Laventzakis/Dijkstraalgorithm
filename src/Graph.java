@@ -3,13 +3,11 @@ import java.util.Set;
 
 public class Graph {
 
-    private Set<Node> nodes = new HashSet<>(); // HashSet is a Set that does not allow duplicate elements
+    private Set<Node> nodes = new HashSet<>();
 
-    public void addNode(Node nodeA) { // addNode() method
+    public void addNode(Node nodeA) {
         nodes.add(nodeA);
     }
-
-    // getters and setters
 
     public Set<Node> getNodes() {
         return nodes;
@@ -17,6 +15,5 @@ public class Graph {
 
     public void setNodes(Set<Node> nodes) {
         this.nodes = nodes;
-
     }
 }
